@@ -584,7 +584,7 @@ const Chat = () => {
                   }
                   value={message}
                   maxLength={500}
-                  disabled={!socketActive()}
+                  // disabled={!socketActive()}
                   onChange={handleChange}
                   onKeyDown={handleKeyDown}
                 />
