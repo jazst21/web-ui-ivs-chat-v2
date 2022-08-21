@@ -41,22 +41,12 @@ const Chat = () => {
 
     connectionInit.onclose = (event) => {
       // If the websocket closes, remove the current chat token
-      setChatToken(null);
-      renderDisconnect(event.reason);
+      // setChatToken(null);
+      // renderDisconnect(event.reason);
     };
 
     connectionInit.onerror = (event) => {
       console.error("Chat room websocket error observed:", event);
-      axios
-      .post(`${config.API_URL}/auth`, data)
-      .then((response) => {
-        setChatToken(response.data);
-        initConnection(response.data);
-      })
-      .catch((error) => {
-        setChatToken(null);
-        console.error("Error:", error);
-      });
     };
 
     connectionInit.onmessage = (event) => {
