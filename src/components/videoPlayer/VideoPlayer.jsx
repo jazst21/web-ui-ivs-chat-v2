@@ -52,7 +52,7 @@ const VideoPlayer = ({ playbackUrl }) => {
           id="video-player"
           className="video-elem pos-absolute full-width"
           playsInline
-          muted
+          // muted
         ></video>
       </div>
     </div>
