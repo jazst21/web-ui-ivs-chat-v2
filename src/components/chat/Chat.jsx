@@ -237,11 +237,16 @@ const Chat = () => {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      if (message) {
-        sendMessage(message);
-        setMessage("");
+    if (socketActive) {
+      if (e.key === "Enter") {
+        if (message) {
+          sendMessage(message);
+          setMessage("");
+        }
       }
+    }
+    else{
+      requestToken(username, moderator, avatar);
     }
   };
 
@@ -317,17 +322,17 @@ const Chat = () => {
 
   const sanitize = (string) => {
     const map = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#x27;',
-        "/": '&#x2F;',
-        "`": '&grave;'
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#x27;",
+      "/": "&#x2F;",
+      "`": "&grave;",
     };
-    const reg = /[&<>"'/]/ig;
-    return string.replace(reg, (match)=>(map[match]));
-  }
+    const reg = /[&<>"'/]/gi;
+    return string.replace(reg, (match) => map[match]);
+  };
 
   const sendMessage = (message) => {
     const uuid = uuidv4();
@@ -563,9 +568,9 @@ const Chat = () => {
             <div className="chat-wrapper">
               <div className="messages">
                 {renderMessages()}
-                {!socketActive() ? requestToken(username, moderator, avatar) : "still have socket"}
                 <div ref={messagesEndRef} />
               </div>
+              {/* <div>{!socketActive() ? requestToken(username, moderator, avatar) : ""}</div> */}
               <div className="composer fl fl-j-center">
                 <input
                   ref={chatRef}
@@ -598,6 +603,7 @@ const Chat = () => {
           </div>
         </div>
         {showSignIn && <SignIn requestToken={requestToken} />}
+        {/* <div>{setTimeout(() => {  requestToken(username, moderator, avatar) }, 50000)}</div> */}
       </div>
     </>
   );
