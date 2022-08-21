@@ -549,9 +549,9 @@ const Chat = () => {
     const status = {
       type: "SUCCESS",
       timestamp: `${Date.now()}`,
-      username: "",
-      userId: "",
-      avatar: "",
+      // username: "",
+      // userId: "",
+      // avatar: "",
       message: `Connected to the chat room.`,
     };
     setMessages((prevState) => {
