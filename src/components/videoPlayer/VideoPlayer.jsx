@@ -53,6 +53,8 @@ const VideoPlayer = ({ playbackUrl }) => {
           id="video-player"
           className="video-elem pos-absolute full-width"
           playsInline
+          controls
+          preload="auto"          
         ></video>
       </div>
     </div>
