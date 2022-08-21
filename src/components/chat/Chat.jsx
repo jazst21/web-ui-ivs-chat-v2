@@ -47,7 +47,7 @@ const Chat = () => {
 
     connectionInit.onerror = (event) => {
       console.error("Chat room websocket error observed:", event);
-      initConnection(chatToken);
+      setConnection(connectionInit);
     };
 
     connectionInit.onmessage = (event) => {
