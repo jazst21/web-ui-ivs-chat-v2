@@ -540,6 +540,7 @@ const Chat = () => {
     setMessages((prevState) => {
       return [...prevState, error];
     });
+    renderConnect();
   };
 
   const renderConnect = () => {
