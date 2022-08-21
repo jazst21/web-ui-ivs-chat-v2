@@ -47,8 +47,16 @@ const Chat = () => {
 
     connectionInit.onerror = (event) => {
       console.error("Chat room websocket error observed:", event);
-      const connectionInit = new WebSocket(config.CHAT_WEBSOCKET, token);
-      setConnection(connectionInit);
+      axios
+      .post(`${config.API_URL}/auth`, data)
+      .then((response) => {
+        setChatToken(response.data);
+        initConnection(response.data);
+      })
+      .catch((error) => {
+        setChatToken(null);
+        console.error("Error:", error);
+      });
     };
 
     connectionInit.onmessage = (event) => {
