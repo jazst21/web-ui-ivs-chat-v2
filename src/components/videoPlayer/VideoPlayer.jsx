@@ -42,6 +42,7 @@ const VideoPlayer = ({ playbackUrl }) => {
     // Setup stream and play
     player.setAutoplay(true);
     player.load(playbackUrl);
+    player.playsInline = true;
     player.setVolume(1);
   }, []); // eslint-disable-line
 
@@ -52,7 +53,6 @@ const VideoPlayer = ({ playbackUrl }) => {
           id="video-player"
           className="video-elem pos-absolute full-width"
           playsInline
-          // muted
         ></video>
       </div>
     </div>
