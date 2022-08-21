@@ -246,8 +246,8 @@ const Chat = () => {
       }
     }
     else{
-      requestToken(username, moderator, avatar);
       renderConnect();
+      requestToken = (selectedUsername, isModerator, selectedAvatar);
     }
   };
 
@@ -542,7 +542,7 @@ const Chat = () => {
       return [...prevState, error];
     });
     renderConnect();
-    requestToken(username, moderator, avatar);
+    requestToken = (selectedUsername, isModerator, selectedAvatar);
   };
 
   const renderConnect = () => {
@@ -577,7 +577,8 @@ const Chat = () => {
               <div className="composer fl fl-j-center">
                 <input
                   ref={chatRef}
-                  className={`rounded mg-r-1 ${!username ? "hidden" : ""}`}
+                  // className={`rounded mg-r-1 ${!username ? "hidden" : ""}`}
+                  className={`rounded mg-r-1`}
                   type="text"
                   placeholder={
                     socketActive() ? "Say something" : "Waiting to connect..."
