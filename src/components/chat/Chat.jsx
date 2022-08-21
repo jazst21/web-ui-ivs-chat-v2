@@ -541,8 +541,8 @@ const Chat = () => {
     setMessages((prevState) => {
       return [...prevState, error];
     });
-    requestToken(username, moderator, avatar);
     renderConnect();
+    requestToken(username, moderator, avatar);
   };
 
   const renderConnect = () => {
