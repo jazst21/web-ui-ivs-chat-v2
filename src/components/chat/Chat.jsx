@@ -247,7 +247,7 @@ const Chat = () => {
     }
     else{
       renderConnect();
-      requestToken = (selectedUsername, isModerator, selectedAvatar);
+      requestToken = (username, moderator, avatar);
     }
   };
 
@@ -542,7 +542,7 @@ const Chat = () => {
       return [...prevState, error];
     });
     renderConnect();
-    requestToken = (selectedUsername, isModerator, selectedAvatar);
+    requestToken = (username, moderator, avatar);
   };
 
   const renderConnect = () => {
