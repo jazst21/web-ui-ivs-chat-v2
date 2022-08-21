@@ -42,7 +42,7 @@ const VideoPlayer = ({ playbackUrl }) => {
     // Setup stream and play
     player.setAutoplay(true);
     player.load(playbackUrl);
-    player.setVolume(0.5);
+    player.setVolume(1);
   }, []); // eslint-disable-line
 
   return (
