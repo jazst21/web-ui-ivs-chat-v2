@@ -246,8 +246,8 @@ const Chat = () => {
       }
     }
     else{
-      renderConnect();
       requestToken = (username, moderator, avatar);
+      renderConnect();
     }
   };
 
@@ -533,16 +533,16 @@ const Chat = () => {
     const error = {
       type: "ERROR",
       timestamp: `${Date.now()}`,
-      username: "",
-      userId: "",
-      avatar: "",
+      // username: "",
+      // userId: "",
+      // avatar: "",
       message: `Connection closed. Reason: ${message}`,
     };
     setMessages((prevState) => {
       return [...prevState, error];
     });
-    renderConnect();
     requestToken = (username, moderator, avatar);
+    renderConnect();
   };
 
   const renderConnect = () => {
@@ -592,7 +592,7 @@ const Chat = () => {
                 {socketActive() && (
                   <StickerPicker handleStickerSend={handleStickerSend} />
                 )}
-                {!username && (
+                {/* {!username && (
                   <fieldset>
                     <button
                       onClick={handleOnClick}
@@ -601,7 +601,7 @@ const Chat = () => {
                       Join the chat room
                     </button>
                   </fieldset>
-                )}
+                )} */}
               </div>
             </div>
           </div>
