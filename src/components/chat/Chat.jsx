@@ -246,8 +246,8 @@ const Chat = () => {
       }
     }
     else{
-      renderConnect();
       requestToken(username, moderator, avatar);
+      renderConnect();
     }
   };
 
