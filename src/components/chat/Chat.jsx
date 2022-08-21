@@ -41,8 +41,8 @@ const Chat = () => {
 
     connectionInit.onclose = (event) => {
       // If the websocket closes, remove the current chat token
-      // setChatToken(null);
-      // renderDisconnect(event.reason);
+      setChatToken(null);
+      renderDisconnect(event.reason);
     };
 
     connectionInit.onerror = (event) => {
@@ -563,6 +563,7 @@ const Chat = () => {
             <div className="chat-wrapper">
               <div className="messages">
                 {renderMessages()}
+                {!socketActive() ? requestToken(username, moderator, avatar) : "still have socket"}
                 <div ref={messagesEndRef} />
               </div>
               <div className="composer fl fl-j-center">
