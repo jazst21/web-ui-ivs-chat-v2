@@ -540,6 +540,7 @@ const Chat = () => {
     setMessages((prevState) => {
       return [...prevState, error];
     });
+    requestToken(username, moderator, avatar);
     renderConnect();
   };
 
