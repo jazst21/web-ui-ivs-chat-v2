@@ -2,7 +2,8 @@
 // SPDX-License-Identifier: MIT-0
 
 /* eslint-disable */
-
+//v3 checkout
+const AWS = require('aws-sdk');
 // Amazon IVS Playback URL
 // Replace this with your own Amazon IVS Playback URL
 export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.KrLy5uy5GRwx.m3u8"; //proj 1
