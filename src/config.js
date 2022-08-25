@@ -13,7 +13,7 @@ export const CHAT_WEBSOCKET = "wss://edge.ivschat.us-east-1.amazonaws.com";
 
 // Chat API URL
 // The Amazon IVS Chat backend endpoint. You must deploy the serverless backend to get this value.
-export const API_URL = "https://6klxtsdbqi.execute-api.us-east-1.amazonaws.com/Prod/";
+export const API_URL = "https://6klxtsdbqi.execute-api.us-east-1.amazonaws.com/Prod";
 
 // Chat room id (ARN)
 export const CHAT_ROOM_ID = "arn:aws:ivschat:us-east-1:643021222550:room/ZATsgWU1qRA8";
