@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-backendivschat-staging-32953-authRole",
+      "UnauthRoleArn": "arn:aws:iam::334734167946:role/amplify-backendivschat-staging-32953-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::334734167946:role/amplify-backendivschat-staging-32953-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-backendivschat-staging-32953-deployment",
+      "UnauthRoleName": "amplify-backendivschat-staging-32953-unauthRole",
+      "StackName": "amplify-backendivschat-staging-32953",
+      "StackId": "arn:aws:cloudformation:us-east-1:334734167946:stack/amplify-backendivschat-staging-32953/2f7fb850-2426-11ed-9bfd-1240f9b52e31",
+      "AmplifyAppId": "d1l71m76c6mwzr"
+    },
+    "categories": {
+      "auth": {
+        "backendivschat": {}
+      }
+    }
+  }
+}

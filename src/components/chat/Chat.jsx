@@ -10,11 +10,19 @@ import * as config from "../../config";
 import VideoPlayer from "../videoPlayer/VideoPlayer";
 import SignIn from "./SignIn";
 import StickerPicker from "./StickerPicker";
+import { Amplify, Auth } from "aws-amplify";
+import { withAuthenticator } from "@aws-amplify/ui-react";
+
 
 // Styles
 import "./Chat.css";
+// let userCognito = async() => {
+//   return Auth.currentAuthenticatedUser();
+// };
+// const { attributes } = userCognito;  
 
-const Chat = () => {
+
+const Chat = (props) => {
   const [showSignIn, setShowSignIn] = useState(true);
   const [username, setUsername] = useState("");
   const [moderator, setModerator] = useState(false);
@@ -546,13 +554,19 @@ const Chat = () => {
   };
 
   const renderConnect = () => {
+    // const { attributes } = () =>
+    //   async (dispatch) => { 
+    //     await Auth.currentAuthenticatedUser();
+    //   }};
     const status = {
       type: "SUCCESS",
       timestamp: `${Date.now()}`,
       // username: "",
       // userId: "",
       // avatar: "",
-      message: `Connected to the chat room.`,
+      // message: `Connected to the chat room`,
+      // message: Amplify.Auth.currentAuthenticatedUser().username.value,
+      message: props.userCognito.attributes.name + ` is Connected to the chat room`,
     };
     setMessages((prevState) => {
       return [...prevState, status];
@@ -613,4 +627,4 @@ const Chat = () => {
   );
 };
 
-export default Chat;
+export default withAuthenticator(Chat);
