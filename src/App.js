@@ -32,29 +32,39 @@ Amplify.configure(awsmobile);
 
 function App({ signOut }) {
   return (
-    // <div className="App full-width full-height">
     <div>
       <div className="pure-menu pure-menu-horizontal">
         <ul className="pure-menu-list">
-          <li className="pure-menu-item">
-            <a href="#" className="pure-menu-link">
-              Room-1
+          {/* <li class="pure-menu-item pure-menu-selected">
+            <a href="#" class="pure-menu-link">
+              Home
             </a>
-          </li>
-          <li className="pure-menu-item">
-            <a href="http://room2.net22.live" className="pure-menu-link">
-              Room-2
+          </li> */}
+          <li className="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#" id="menuLink1" className="pure-menu-link">
+              Rooms
             </a>
-          </li>
-          <li className="pure-menu-item">
-            <a href="http://room2.net22.live" className="pure-menu-link">
-              Room-3
-            </a>
+            <ul className="pure-menu-children">
+              <li className="pure-menu-item">
+                <a href="#" className="pure-menu-link">
+                  Room-1
+                </a>
+              </li>
+              <li className="pure-menu-item">
+                <a href="#" className="pure-menu-link">
+                  Room-2
+                </a>
+              </li>
+              <li className="pure-menu-item">
+                <a href="#" className="pure-menu-link">
+                  Room-3
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
       <VideoPlayer playbackUrl={config.PLAYBACK_URL} />
-      {/* <div className="App full-width full-height"> */}
       <div>
         <Chat />
       </div>
@@ -64,3 +74,4 @@ function App({ signOut }) {
 
 export default App;
 // export default withAuthenticator(App);
+

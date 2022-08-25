@@ -577,7 +577,9 @@ const Chat = ({signOut,user}) => {
 
   return (
     <>
-      <div className="main full-width full-height chat-container">
+      {/* <div className="main full-width full-height chat-container"> */}
+      {/* <label onClick={signOut}>signout</label> */}
+      <div className="main full-width chat-container">
         <div className="content-wrapper mg-2">
           <div className="col-wrapper">
             <div className="chat-wrapper">
@@ -603,13 +605,16 @@ const Chat = ({signOut,user}) => {
                 {socketActive() && (
                   <StickerPicker handleStickerSend={handleStickerSend} />
                 )}
+                <label onClick={signOut}>Sign Out</label>
               </div>
             </div>
           </div>
         </div>
         {showSignIn && <SignIn requestToken={requestToken} />}
         {/* <div>{setTimeout(() => {  requestToken(username, moderator, avatar) }, 50000)}</div> */}
-        <button onClick={signOut}>Sign out</button>
+        {/* <div align="right" >
+        <button onClick={signOut} align >Sign out</button>
+        </div> */}
       </div>
     </>
   );
