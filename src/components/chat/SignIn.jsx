@@ -21,7 +21,7 @@ const SignIn = ({ requestToken }) => {
   return (
     <div className="modal pos-absolute top-0 bottom-0">
       <div className="modal__el">
-        <h1 className="mg-b-2">Join the chat room</h1>
+        <h3 className="mg-b-2">Join the chat room</h3>
         <form onSubmit={(e) => {e.preventDefault()}}>
           <fieldset>
             {/* <label htmlFor="name" className="mg-b-05">
@@ -55,23 +55,24 @@ const SignIn = ({ requestToken }) => {
               </div>
             </div>
             <hr />
-            <div className="fl fl-a-center fl-j-start full-width">
+            {/* <div className="fl fl-a-center fl-j-start full-width">
               <input
                 type="checkbox"
                 id="moderator"
                 name="moderator"
                 className="mg-l-0 mg-r-1"
                 checked={moderator}
+                visible="false"
                 onChange={(e) => {
                   setModerator(e.target.checked);
                 }}
               />
               <label htmlFor="moderator">Join as moderator</label>
-            </div>
+            </div> */}
             <hr />
             <button
               onClick={(e) => {
-                requestToken(username, moderator, avatar);
+                requestToken("blank", moderator, avatar);
               }}
               className="btn btn--primary rounded mg-t-1"
               //disabled={!username}

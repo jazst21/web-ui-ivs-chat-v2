@@ -4,25 +4,19 @@
 import React, { useEffect, useState, createRef, useRef } from "react";
 import axios from "axios";
 
-import * as config from "../../config";
-
 // Components
-import VideoPlayer from "../videoPlayer/VideoPlayer";
 import SignIn from "./SignIn";
 import StickerPicker from "./StickerPicker";
 import { Amplify, Auth } from "aws-amplify";
 import { withAuthenticator } from "@aws-amplify/ui-react";
-
-
+import '@aws-amplify/ui-react/styles.css';
+import * as config from "../../config";
+// import { Authenticator } from 'aws-amplify-react';
 // Styles
 import "./Chat.css";
-// let userCognito = async() => {
-//   return Auth.currentAuthenticatedUser();
-// };
-// const { attributes } = userCognito;  
+// const { attributes } = await Auth.currentAuthenticatedUser();
 
-
-const Chat = (props) => {
+const Chat = ({signOut,user}) => {
   const [showSignIn, setShowSignIn] = useState(true);
   const [username, setUsername] = useState("");
   const [moderator, setModerator] = useState(false);
@@ -187,7 +181,9 @@ const Chat = (props) => {
 
   const handleMessage = (data) => {
     // const username = data["Sender"]["Attributes"]["username"];
-    const username = props.userCognito.attributes.username;
+    // const username = Auth.currentAuthenticatedUser() ? user.attributes.username : "";
+    // const username = Auth.currentAuthenticatedUser() ? user.attributes.name : "";
+    // const username = props.userCognito.attributes.username;
     const userId = data["Sender"]["UserId"];
     const avatar = data["Sender"]["Attributes"]["avatar"];
     const message = sanitize(data["Content"]);
@@ -484,7 +480,9 @@ const Chat = (props) => {
     return (
       <div className="chat-line-wrapper" key={message.timestamp}>
         <div className="chat-line" key={message.timestamp}>
-          {props.userCognito.attributes.name}
+          {/* {props.userCognito.attributes.name} */}
+          {/* {Auth.currentAuthenticatedUser() ? user.attributes.name : ""} */}
+          {Auth.currentAuthenticatedUser() ? user.attributes.name : ""}
           <img
             className="chat-line-img"
             src={message.avatar}
@@ -568,7 +566,9 @@ const Chat = (props) => {
       // avatar: "",
       // message: `Connected to the chat room`,
       // message: Amplify.Auth.currentAuthenticatedUser().username.value,
-      message: props.userCognito.attributes.name + ` is Connected to the chat room`,
+      // message: props.userCognito.attributes.name + ` is Connected to the chat room`,
+        // message: Auth.currentAuthenticatedUser() ? user.attributes.name + ` is Connected to the chat room`: `Connected to the chat room`,
+        message: Auth.currentAuthenticatedUser() ? user.attributes.name+ ` is Connected to the chat room`: `Connected to the chat room`,
     };
     setMessages((prevState) => {
       return [...prevState, status];
@@ -577,12 +577,8 @@ const Chat = (props) => {
 
   return (
     <>
-      <header>
-        <h3>Amazon IVS Chat Web Demo - Cloud Day INDONESIA 2022 - Room 1</h3>
-      </header>
       <div className="main full-width full-height chat-container">
         <div className="content-wrapper mg-2">
-          <VideoPlayer playbackUrl={config.PLAYBACK_URL} />
           <div className="col-wrapper">
             <div className="chat-wrapper">
               <div className="messages">
@@ -613,9 +609,11 @@ const Chat = (props) => {
         </div>
         {showSignIn && <SignIn requestToken={requestToken} />}
         {/* <div>{setTimeout(() => {  requestToken(username, moderator, avatar) }, 50000)}</div> */}
+        <button onClick={signOut}>Sign out</button>
       </div>
     </>
   );
 };
 
+// export default Chat ;
 export default withAuthenticator(Chat);
