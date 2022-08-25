@@ -5,7 +5,7 @@
 
 // Amazon IVS Playback URL
 // Replace this with your own Amazon IVS Playback URL
-export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.KrLy5uy5GRwx.m3u8";
+export const PLAYBACK_URL = "https://29a1a5163b65.us-east-1.playback.live-video.net/api/video/v1/us-east-1.643021222550.channel.plsw4gEa1vJq.m3u8";";
 
 // Chat websocket address
 // The websocket endpoint for the chat room: wss://edge.ivschat.<AWS_REGION>.amazonaws.com
@@ -13,10 +13,10 @@ export const CHAT_WEBSOCKET = "wss://edge.ivschat.us-east-1.amazonaws.com";
 
 // Chat API URL
 // The Amazon IVS Chat backend endpoint. You must deploy the serverless backend to get this value.
-export const API_URL = "https://0gf380etvl.execute-api.us-east-1.amazonaws.com/Prod";
+export const API_URL = "https://6klxtsdbqi.execute-api.us-east-1.amazonaws.com/Prod/";
 
 // Chat room id (ARN)
-export const CHAT_ROOM_ID = "arn:aws:ivschat:us-east-1:334734167946:room/7A5FDExQi4OA";
+export const CHAT_ROOM_ID = "arn:aws:ivschat:us-east-1:643021222550:room/ZATsgWU1qRA8";
 
 // Token duration in minutes
 // Values between 1 and 180 are supported.
