@@ -5,7 +5,8 @@
 
 // Amazon IVS Playback URL
 // Replace this with your own Amazon IVS Playback URL
-export const PLAYBACK_URL = "https://29a1a5163b65.us-east-1.playback.live-video.net/api/video/v1/us-east-1.643021222550.channel.plsw4gEa1vJq.m3u8";
+export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.KrLy5uy5GRwx.m3u8"; //proj 1
+// export const PLAYBACK_URL = "https://29a1a5163b65.us-east-1.playback.live-video.net/api/video/v1/us-east-1.643021222550.channel.plsw4gEa1vJq.m3u8"; //proj 2
 
 // Chat websocket address
 // The websocket endpoint for the chat room: wss://edge.ivschat.<AWS_REGION>.amazonaws.com
