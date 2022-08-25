@@ -13,12 +13,12 @@ export const CHAT_WEBSOCKET = "wss://edge.ivschat.us-east-1.amazonaws.com";
 
 // Chat API URL
 // The Amazon IVS Chat backend endpoint. You must deploy the serverless backend to get this value.
-// export const API_URL = "https://0gf380etvl.execute-api.us-east-1.amazonaws.com/Prod"; //proj1
-export const API_URL = "https://pp1873ouad.execute-api.us-east-1.amazonaws.com/Prod"; //proj2
+export const API_URL = "https://0gf380etvl.execute-api.us-east-1.amazonaws.com/Prod"; //proj1
+// export const API_URL = "https://pp1873ouad.execute-api.us-east-1.amazonaws.com/Prod"; //proj2
 
 // Chat room id (ARN)
-// export const CHAT_ROOM_ID = "arn:aws:ivschat:us-east-1:334734167946:room/7A5FDExQi4OA"; //proj1
-export const CHAT_ROOM_ID = "arn:aws:ivschat:us-east-1:643021222550:room/ZATsgWU1qRA8";
+export const CHAT_ROOM_ID = "arn:aws:ivschat:us-east-1:334734167946:room/7A5FDExQi4OA"; //proj1
+// export const CHAT_ROOM_ID = "arn:aws:ivschat:us-east-1:643021222550:room/ZATsgWU1qRA8";
 
 // Token duration in minutes
 // Values between 1 and 180 are supported.
