@@ -11,11 +11,12 @@ const SignIn = ({ requestToken }) => {
   const [avatar, setAvatar] = useState({});
   const [loaded, setLoaded] = useState(false);
   const inputRef = createRef();
+  // setUsername("default");
 
-  useEffect(() => {
-    setLoaded(true);
-    inputRef.current.focus();
-  }, [loaded]); // eslint-disable-line
+  // useEffect(() => {
+  //   setLoaded(true);
+  //   inputRef.current.focus();
+  // }, [loaded]); // eslint-disable-line
 
   return (
     <div className="modal pos-absolute top-0 bottom-0">
@@ -23,7 +24,7 @@ const SignIn = ({ requestToken }) => {
         <h1 className="mg-b-2">Join the chat room</h1>
         <form onSubmit={(e) => {e.preventDefault()}}>
           <fieldset>
-            <label htmlFor="name" className="mg-b-05">
+            {/* <label htmlFor="name" className="mg-b-05">
               Username
             </label>
             <input
@@ -35,11 +36,12 @@ const SignIn = ({ requestToken }) => {
               placeholder="Type here..."
               autoComplete="off"
               value={username}
+              visible="false"
               onChange={(e) => {
                 e.preventDefault();
-                setUsername(e.target.value);
+                setUsername("e.target.value");
               }}
-            />
+            /> */}
             <hr />
             <div className="mg-b-05 label">Select Avatar</div>
             <div className="item-select-container pd-1 mg-b-1">
@@ -72,7 +74,7 @@ const SignIn = ({ requestToken }) => {
                 requestToken(username, moderator, avatar);
               }}
               className="btn btn--primary rounded mg-t-1"
-              disabled={!username}
+              //disabled={!username}
             >
               Start chatting
             </button>

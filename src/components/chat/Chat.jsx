@@ -186,7 +186,8 @@ const Chat = (props) => {
   };
 
   const handleMessage = (data) => {
-    const username = data["Sender"]["Attributes"]["username"];
+    // const username = data["Sender"]["Attributes"]["username"];
+    const username = props.userCognito.attributes.username;
     const userId = data["Sender"]["UserId"];
     const avatar = data["Sender"]["Attributes"]["avatar"];
     const message = sanitize(data["Content"]);
@@ -483,6 +484,7 @@ const Chat = (props) => {
     return (
       <div className="chat-line-wrapper" key={message.timestamp}>
         <div className="chat-line" key={message.timestamp}>
+          {props.userCognito.attributes.name}
           <img
             className="chat-line-img"
             src={message.avatar}
@@ -576,7 +578,7 @@ const Chat = (props) => {
   return (
     <>
       <header>
-        <h1>Amazon IVS Chat Web Demo</h1>
+        <h3>Amazon IVS Chat Web Demo - Cloud Day INDONESIA 2022 - Room 1</h3>
       </header>
       <div className="main full-width full-height chat-container">
         <div className="content-wrapper mg-2">
@@ -587,7 +589,6 @@ const Chat = (props) => {
                 {renderMessages()}
                 <div ref={messagesEndRef} />
               </div>
-              {/* <div>{!socketActive() ? requestToken(username, moderator, avatar) : ""}</div> */}
               <div className="composer fl fl-j-center">
                 <input
                   ref={chatRef}
@@ -595,27 +596,17 @@ const Chat = (props) => {
                   className={`rounded mg-r-1`}
                   type="text"
                   placeholder={
-                    socketActive() ? "Say something" : "Waiting to connect..."
+                    socketActive() ? "Say something" : "Waiting to connect...please reload page"
                   }
                   value={message}
                   maxLength={500}
-                  // disabled={!socketActive()}
+                  disabled={!socketActive()}
                   onChange={handleChange}
                   onKeyDown={handleKeyDown}
                 />
                 {socketActive() && (
                   <StickerPicker handleStickerSend={handleStickerSend} />
                 )}
-                {/* {!username && (
-                  <fieldset>
-                    <button
-                      onClick={handleOnClick}
-                      className="btn btn--primary full-width rounded"
-                    >
-                      Join the chat room
-                    </button>
-                  </fieldset>
-                )} */}
               </div>
             </div>
           </div>
