@@ -32,7 +32,8 @@ Amplify.configure(awsmobile);
 
 function App({ signOut }) {
   return (
-    <div className="App full-width full-height">
+    // <div className="App full-width full-height">
+    <div>
       <div className="pure-menu pure-menu-horizontal">
         <ul className="pure-menu-list">
           <li className="pure-menu-item">
@@ -53,7 +54,8 @@ function App({ signOut }) {
         </ul>
       </div>
       <VideoPlayer playbackUrl={config.PLAYBACK_URL} />
-      <div className="App full-width full-height">
+      {/* <div className="App full-width full-height"> */}
+      <div>
         <Chat />
       </div>
     </div>
