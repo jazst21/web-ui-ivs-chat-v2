@@ -53,17 +53,17 @@ function App({ signOut }) {
             </a>
             <ul className="pure-menu-children">
               <li className="pure-menu-item">
-              <a href="https://chat3.net22.live" className="pure-menu-link">
+              <a href="https://room1.net22.live" className="pure-menu-link">
                   Room-1
                 </a>
               </li>
               <li className="pure-menu-item">
-                <a href="https://chat3.net22.live" className="pure-menu-link">
+                <a href="https://room2.net22.live" className="pure-menu-link">
                   Room-2
                 </a>
               </li>
               <li className="pure-menu-item">
-              <a href="https://chat3.net22.live" className="pure-menu-link">
+              <a href="https://room3.net22.live" className="pure-menu-link">
                   Room-3
                 </a>
               </li>
