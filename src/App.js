@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import React from "react";
+import React, { useState } from 'react';
 import Chat from "./components/chat/Chat";
 import { Amplify, Auth } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
@@ -29,8 +29,15 @@ Amplify.configure(awsmobile);
 // }
 
 // export default withAuthenticator(App);
+// let configs_play = config.PLAYBACK_URL
 
 function App({ signOut }) {
+  // const [videoUrl, setVideo] = useState(["https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.KrLy5uy5GRwx.m3u8"]);
+  // function changeVideo(e) {
+  //   const videoUrl = e.target.value;
+  //   console.log(videoUrl);
+  //   setVideo([...videoUrl]);
+  // }
   return (
     <div>
       <div className="pure-menu pure-menu-horizontal">
@@ -46,17 +53,17 @@ function App({ signOut }) {
             </a>
             <ul className="pure-menu-children">
               <li className="pure-menu-item">
-                <a href="#" className="pure-menu-link">
+              <a href="https://chat3.net22.live" className="pure-menu-link">
                   Room-1
                 </a>
               </li>
               <li className="pure-menu-item">
-                <a href="room2.net22.live" className="pure-menu-link">
+                <a href="https://chat3.net22.live" className="pure-menu-link">
                   Room-2
                 </a>
               </li>
               <li className="pure-menu-item">
-                <a href="room3.net22.live" className="pure-menu-link">
+              <a href="https://chat3.net22.live" className="pure-menu-link">
                   Room-3
                 </a>
               </li>

@@ -7,7 +7,8 @@
 // Amazon IVS Playback URL
 // Replace this with your own Amazon IVS Playback URL
 export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.KrLy5uy5GRwx.m3u8"; //proj 1
-// export const PLAYBACK_URL = "https://29a1a5163b65.us-east-1.playback.live-video.net/api/video/v1/us-east-1.643021222550.channel.plsw4gEa1vJq.m3u8"; //proj 2
+// export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.xfkheupLugVr.m3u8"; //proj 2
+// export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.NJEgZ6J6fHYw.m3u8"; //proj 3
 
 // Chat websocket address
 // The websocket endpoint for the chat room: wss://edge.ivschat.<AWS_REGION>.amazonaws.com
@@ -20,7 +21,8 @@ export const API_URL = "https://0gf380etvl.execute-api.us-east-1.amazonaws.com/P
 
 // Chat room id (ARN)
 export const CHAT_ROOM_ID = "arn:aws:ivschat:us-east-1:334734167946:room/7A5FDExQi4OA"; //proj1
-// export const CHAT_ROOM_ID = "arn:aws:ivschat:us-east-1:643021222550:room/ZATsgWU1qRA8";
+// export const CHAT_ROOM_ID = "arn:aws:ivschat:us-east-1:334734167946:room/7A5FDExQi4OA"; //proj2
+// export const CHAT_ROOM_ID = "arn:aws:ivschat:us-east-1:334734167946:room/7A5FDExQi4OA"; //proj3
 
 // Token duration in minutes
 // Values between 1 and 180 are supported.
