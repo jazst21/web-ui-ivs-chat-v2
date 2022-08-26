@@ -184,6 +184,7 @@ const Chat = ({signOut,user}) => {
     // const username = Auth.currentAuthenticatedUser() ? user.attributes.username : "";
     // const username = Auth.currentAuthenticatedUser() ? user.attributes.name : "";
     // const username = props.userCognito.attributes.username;
+    const username = user.attributes.name;
     const userId = data["Sender"]["UserId"];
     const avatar = data["Sender"]["Attributes"]["avatar"];
     const message = sanitize(data["Content"]);
@@ -469,7 +470,7 @@ const Chat = ({signOut,user}) => {
         {/* <p>
           <span className="username">{message.username}</span>
         </p> */}
-        {Auth.currentAuthenticatedUser() ? user.attributes.name : ""}
+        {/* {Auth.currentAuthenticatedUser() ? user.attributes.name : ""} */}
         <img className="chat-sticker" src={message.sticker} alt={`sticker`} />
       </div>
       {moderator ? renderChatLineActions(message) : ""}
@@ -483,7 +484,7 @@ const Chat = ({signOut,user}) => {
         <div className="chat-line" key={message.timestamp}>
           {/* {props.userCognito.attributes.name} */}
           {/* {Auth.currentAuthenticatedUser() ? user.attributes.name : ""} */}
-          {Auth.currentAuthenticatedUser() ? user.attributes.name : ""}
+          {/* {Auth.currentAuthenticatedUser() ? user.attributes.name : ""} */}
           <img
             className="chat-line-img"
             src={message.avatar}
