@@ -51,12 +51,12 @@ function App({ signOut }) {
                 </a>
               </li>
               <li className="pure-menu-item">
-                <a href="#" className="pure-menu-link">
+                <a href="room2.net22.live" className="pure-menu-link">
                   Room-2
                 </a>
               </li>
               <li className="pure-menu-item">
-                <a href="#" className="pure-menu-link">
+                <a href="room3.net22.live" className="pure-menu-link">
                   Room-3
                 </a>
               </li>
