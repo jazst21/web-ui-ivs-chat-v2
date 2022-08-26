@@ -467,9 +467,9 @@ const Chat = ({signOut,user}) => {
           src={message.avatar}
           alt={`Avatar for ${message.username}`}
         />
-        {/* <p>
+        <p>
           <span className="username">{message.username}</span>
-        </p> */}
+        </p>
         {/* {Auth.currentAuthenticatedUser() ? user.attributes.name : ""} */}
         <img className="chat-sticker" src={message.sticker} alt={`sticker`} />
       </div>
