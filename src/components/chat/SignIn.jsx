@@ -4,14 +4,21 @@
 import React, { useState, createRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import Avatars from "./Avatars";
+import props from "prop-types";
+import { Amplify, Auth } from "aws-amplify";
+import { withAuthenticator } from "@aws-amplify/ui-react";
+import "@aws-amplify/ui-react/styles.css";
 
-const SignIn = ({ requestToken }) => {
+// const SignIn = ({ requestToken,props }) => {
+const SignIn = ({requestToken,user}) => {
+  // super(props);
   const [username, setUsername] = useState("");
   const [moderator, setModerator] = useState(false);
   const [avatar, setAvatar] = useState({});
   const [loaded, setLoaded] = useState(false);
   const inputRef = createRef();
-  // setUsername("default");
+  // setUsername(props.usernameProps);
+  // console.log("username props ->"+ this.props.usernameProps);
 
   // useEffect(() => {
   //   setLoaded(true);
@@ -22,12 +29,16 @@ const SignIn = ({ requestToken }) => {
     <div className="modal pos-absolute top-0 bottom-0">
       <div className="modal__el">
         <h3 className="mg-b-2">Join the chat room</h3>
-        <form onSubmit={(e) => {e.preventDefault()}}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
           <fieldset>
-            {/* <label htmlFor="name" className="mg-b-05">
-              Username
+            <label htmlFor="name" className="mg-b-05">
+              {/* Username */}
             </label>
-            <input
+            {/* <input
               name="name"
               id="name"
               ref={inputRef}
@@ -35,11 +46,12 @@ const SignIn = ({ requestToken }) => {
               className="radius"
               placeholder="Type here..."
               autoComplete="off"
-              value={username}
+              value={props.usernameProps}
               visible="false"
               onChange={(e) => {
                 e.preventDefault();
-                setUsername("e.target.value");
+                setUsername(e.target.value);
+                setUsername(props.usernameProps);
               }}
             /> */}
             <hr />
@@ -72,7 +84,8 @@ const SignIn = ({ requestToken }) => {
             <hr />
             <button
               onClick={(e) => {
-                requestToken("blank", moderator, avatar);
+                // requestToken(username, moderator, avatar);
+                requestToken(user.attributes.name, moderator, avatar);
               }}
               className="btn btn--primary rounded mg-t-1"
               //disabled={!username}
@@ -89,6 +102,7 @@ const SignIn = ({ requestToken }) => {
 
 SignIn.propTypes = {
   requestToken: PropTypes.func,
+  props: PropTypes.string,
 };
 
-export default SignIn;
+export default withAuthenticator(SignIn);
