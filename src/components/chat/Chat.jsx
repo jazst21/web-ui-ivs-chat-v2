@@ -9,14 +9,14 @@ import SignIn from "./SignIn";
 import StickerPicker from "./StickerPicker";
 import { Amplify, Auth } from "aws-amplify";
 import { withAuthenticator } from "@aws-amplify/ui-react";
-import '@aws-amplify/ui-react/styles.css';
+import "@aws-amplify/ui-react/styles.css";
 import * as config from "../../config";
 // import { Authenticator } from 'aws-amplify-react';
 // Styles
 import "./Chat.css";
 // const { attributes } = await Auth.currentAuthenticatedUser();
 
-const Chat = ({signOut,user}) => {
+const Chat = ({ signOut, user }) => {
   const [showSignIn, setShowSignIn] = useState(true);
   const [username, setUsername] = useState("");
   const [moderator, setModerator] = useState(false);
@@ -195,8 +195,8 @@ const Chat = ({signOut,user}) => {
     const newMessage = {
       type: "MESSAGE",
       timestamp,
-      // username,
-      username: user.attributes.name,
+      username,
+      // username: user.attributes.name,
       userId,
       avatar,
       message,
@@ -252,8 +252,7 @@ const Chat = ({signOut,user}) => {
           setMessage("");
         }
       }
-    }
-    else{
+    } else {
       requestToken = (username, moderator, avatar);
       renderConnect();
     }
@@ -559,7 +558,7 @@ const Chat = ({signOut,user}) => {
 
   const renderConnect = () => {
     // const { attributes } = () =>
-    //   async (dispatch) => { 
+    //   async (dispatch) => {
     //     await Auth.currentAuthenticatedUser();
     //   }};
     const status = {
@@ -571,8 +570,10 @@ const Chat = ({signOut,user}) => {
       // message: `Connected to the chat room`,
       // message: Amplify.Auth.currentAuthenticatedUser().username.value,
       // message: props.userCognito.attributes.name + ` is Connected to the chat room`,
-        // message: Auth.currentAuthenticatedUser() ? user.attributes.name + ` is Connected to the chat room`: `Connected to the chat room`,
-        message: Auth.currentAuthenticatedUser() ? user.attributes.name+ ` is Connected to the chat room`: `Connected to the chat room`,
+      // message: Auth.currentAuthenticatedUser() ? user.attributes.name + ` is Connected to the chat room`: `Connected to the chat room`,
+      message: Auth.currentAuthenticatedUser()
+        ? user.attributes.name + ` is Connected to the chat room`
+        : `Connected to the chat room`,
     };
     setMessages((prevState) => {
       return [...prevState, status];
@@ -584,6 +585,10 @@ const Chat = ({signOut,user}) => {
       {/* <div className="main full-width full-height chat-container"> */}
       {/* <label onClick={signOut}>signout</label> */}
       <div className="main full-width chat-container">
+        {console.log("inside chat.jsx ->" + user.attributes.name)}
+        {showSignIn && (
+          <SignIn requestToken={requestToken} usernameProps="pugar" />
+        )}
         <div className="content-wrapper mg-2">
           <div className="col-wrapper">
             <div className="chat-wrapper">
@@ -598,7 +603,9 @@ const Chat = ({signOut,user}) => {
                   className={`rounded mg-r-1`}
                   type="text"
                   placeholder={
-                    socketActive() ? "Say something" : "Waiting to connect...please reload page"
+                    socketActive()
+                      ? "Say something"
+                      : "Waiting to connect...please reload page"
                   }
                   value={message}
                   maxLength={500}
@@ -614,7 +621,7 @@ const Chat = ({signOut,user}) => {
             </div>
           </div>
         </div>
-        {showSignIn && <SignIn requestToken={requestToken} />}
+        {/* {showSignIn && <SignIn requestToken={requestToken} usernameProps={user.attributes.name} />} */}
         {/* <div>{setTimeout(() => {  requestToken(username, moderator, avatar) }, 50000)}</div> */}
         {/* <div align="right" >
         <button onClick={signOut} align >Sign out</button>
