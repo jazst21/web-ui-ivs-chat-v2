@@ -8,8 +8,8 @@
 // Replace this with your own Amazon IVS Playback URL
 // export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.KrLy5uy5GRwx.m3u8"; //proj 1
 // export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.xfkheupLugVr.m3u8"; //proj 2
-export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.NJEgZ6J6fHYw.m3u8"; //proj 3
-
+// export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.NJEgZ6J6fHYw.m3u8"; //proj 3
+export const PLAYBACK_URL = "https://d1gnaphp93fop2.cloudfront.net/videos/multiresolution/rendition_new10.m3u8"; //proj 3
 // Chat websocket address
 // The websocket endpoint for the chat room: wss://edge.ivschat.<AWS_REGION>.amazonaws.com
 export const CHAT_WEBSOCKET = "wss://edge.ivschat.us-east-1.amazonaws.com";
