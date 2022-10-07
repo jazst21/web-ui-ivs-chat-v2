@@ -6,7 +6,8 @@
 
 // Amazon IVS Playback URL
 // Replace this with your own Amazon IVS Playback URL
-export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.KrLy5uy5GRwx.m3u8"; //proj 1
+export const PLAYBACK_URL = "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"; //proj 1
+// export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.KrLy5uy5GRwx.m3u8"; //proj 1
 // export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.xfkheupLugVr.m3u8"; //proj 2
 // export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.NJEgZ6J6fHYw.m3u8"; //proj 3
 
