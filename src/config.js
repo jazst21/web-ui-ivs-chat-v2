@@ -8,7 +8,7 @@
 // Replace this with your own Amazon IVS Playback URL
 // export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.KrLy5uy5GRwx.m3u8"; //proj 1
 // export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.xfkheupLugVr.m3u8"; //proj 2
-export const PLAYBACK_URL = "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"; //proj 2
+export const PLAYBACK_URL = "https://diceyk6a7voy4.cloudfront.net/e78752a1-2e83-43fa-85ae-3d508be29366/hls/fitfest-sample-1_Ott_Hls_Ts_Avc_Aac_16x9_1280x720p_30Hz_6.0Mbps_qvbr.m3u8"; //proj 2
 // export const PLAYBACK_URL = "https://9331ca373d79.us-east-1.playback.live-video.net/api/video/v1/us-east-1.334734167946.channel.NJEgZ6J6fHYw.m3u8"; //proj 3
 
 // Chat websocket address
